@@ -1,0 +1,80 @@
+{
+  "type": "MaxHistoryTrackerFeaturizer",
+  "state_featurizer": {
+    "action_texts": [],
+    "entity_tag_specs": [],
+    "feature_states": {
+      "intent": {
+        "affirm": 0,
+        "ask_admission": 1,
+        "ask_campus": 2,
+        "ask_courses": 3,
+        "ask_events": 4,
+        "ask_faculty": 5,
+        "ask_fees": 6,
+        "ask_placements": 7,
+        "ask_timetable": 8,
+        "back": 9,
+        "bot_challenge": 10,
+        "deny": 11,
+        "faculty_info": 12,
+        "goodbye": 13,
+        "greet": 14,
+        "nlu_fallback": 15,
+        "out_of_scope": 16,
+        "restart": 17,
+        "session_start": 18
+      },
+      "action_name": {
+        "action_listen": 0,
+        "action_restart": 1,
+        "action_session_start": 2,
+        "action_default_fallback": 3,
+        "action_deactivate_loop": 4,
+        "action_revert_fallback_events": 5,
+        "action_default_ask_affirmation": 6,
+        "action_default_ask_rephrase": 7,
+        "action_two_stage_fallback": 8,
+        "action_unlikely_intent": 9,
+        "action_back": 10,
+        "...": 11,
+        "action_extract_slots": 12,
+        "utter_greet": 13,
+        "utter_ask_placements": 14,
+        "utter_faculty_info": 15,
+        "utter_affirm": 16,
+        "utter_ask_admission": 17,
+        "utter_ask_campus": 18,
+        "utter_ask_courses": 19,
+        "utter_ask_events": 20,
+        "utter_ask_faculty": 21,
+        "utter_ask_fees": 22,
+        "utter_ask_timetable": 23,
+        "utter_bot_challenge": 24,
+        "utter_default": 25,
+        "utter_deny": 26,
+        "utter_goodbye": 27,
+        "utter_please_rephrase": 28
+      },
+      "entities": {
+        "activity_type": 0,
+        "day": 1,
+        "department": 2,
+        "event": 3,
+        "facility": 4,
+        "financial_aid": 5,
+        "program": 6
+      },
+      "slots": {
+        "program_0": 0,
+        "department_0": 1,
+        "facility_0": 2,
+        "financial_aid_0": 3,
+        "event_0": 4
+      },
+      "active_loop": {}
+    }
+  },
+  "remove_duplicates": true,
+  "max_history": 5
+}

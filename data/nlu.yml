@@ -1,0 +1,202 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hi
+    - hello
+    - hey
+    - good morning
+    - good evening
+    - howdy
+    - what's up?
+    - greetings
+    - hello there
+    - nice to meet you
+    - yo
+    - hi bot
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you later
+    - take care
+    - have a nice day
+    - farewell
+    - bye bye
+    - see ya
+    - later
+    - talk to you later
+    - catch you later
+    - where is mits
+- intent: affirm
+  examples: |
+    - yes
+    - sure
+    - absolutely
+    - that's right
+    - indeed
+    - definitely
+    - okay
+    - yup
+    - correct
+    - fine
+    - sounds good
+- intent: deny
+  examples: |
+    - no
+    - not really
+    - I don't think so
+    - never
+    - nope
+    - not exactly
+    - incorrect
+    - definitely not
+    - that's wrong
+- intent: ask_admission
+  examples: |
+    - How can I apply for admission to MITS Gwalior?
+    - What are the admission requirements for the [B.Tech](program) program?
+    - Tell me the eligibility criteria for [M.Tech](program) at MITS.
+    - When is the last date to submit the application for [MCA](program) admissions?
+    - What documents are needed for [PhD](program) admission?
+    - Can I apply online for MITS admissions?
+    - What is the detailed admission process for [B.Arch](program)?
+    - Where can I find the admission form?
+    - Is there an entrance exam required for [B.Tech](program)?
+    - What entrance tests does MITS accept for [M.Tech](program)?
+    - What is the application fee for MITS?
+    - Are there interviews for admission to the [MBA](program) program?
+    - Tell me about the lateral entry admission process for [B.Tech](program).
+    - What's the procedure to get admitted?
+    - Admission deadline information?
+    - what isi the admission process of mits
+- intent: ask_courses
+  examples: |
+    - What academic programs does MITS Gwalior offer?
+    - Tell me about the [Computer Science and Engineering](department) department's offerings.
+    - Do you have an [MBA](program) course?
+    - What are the available [engineering](department) disciplines at MITS?
+    - List the specializations available under the [B.Tech](program) degree.
+    - What [M.Tech](program) specializations can I choose from?
+    - Give me details about the [Architecture](department) program.
+    - What is the curriculum structure for the [MCA](program)?
+    - Does MITS offer [PhD](program) programs? If so, in which fields?
+    - Are there any [diploma courses](program) available?
+    - How long is the [B.Tech](program) program?
+    - Can I see the syllabus for [Civil Engineering](department)?
+    - What courses are taught in [Electrical Engineering](department)?
+    - List all available programs.
+- intent: ask_fees
+  examples: |
+    - What is the tuition fee for [B.Tech](program) in [Computer Science](department)?
+    - How much does the [MBA](program) cost per year at MITS Gwalior?
+    - What are the current [hostel fees](facility)?
+    - Are there any [scholarships](financial_aid) available for students?
+    - What methods can I use to pay the fees?
+    - Are fee concessions or financial aid options available?
+    - How much are the examination fees?
+    - Can you provide the fee structure for the [M.Tech](program) specializations?
+    - Are there separate [transportation fees](facility)?
+    - What's the total cost for the [B.Arch](program) degree?
+    - Can I pay fees in installments?
+    - When is the deadline for fee payment?
+    - Tell me about library fees or lab fees.
+    - what is the fees structure
+- intent: ask_faculty
+  examples: |
+    - Who are the professors in the [Computer Science](department) department?
+    - Can you tell me about the faculty members in [Mechanical Engineering](department)?
+    - How many professors teach in the [Civil Engineering](department)?
+    - Where is the MITS faculty directory available?
+    - What are the primary research areas of the MITS faculty?
+    - Tell me about the qualifications of the [Electronics and Telecommunication](department) faculty.
+    - Who is the Head of Department (HOD) for [Mechanical Engineering](department)?
+    - Highlight some recent faculty achievements.
+    - Does MITS have visiting faculty? In which departments?
+    - How can I find contact information for [Applied Science and Humanities](department) faculty?
+    - List the faculty in the [Architecture](department).
+    - Who is the expert in AI within the [CSE](department) department?
+- intent: ask_events
+  examples: |
+    - What events are scheduled for this semester at MITS?
+    - When is the next [cultural fest](event)?
+    - Are there any upcoming [workshops](event) or [seminars](event) at MITS?
+    - Tell me about the annual [technical fest](event).
+    - What are the dates for inter-college [sports events](event)?
+    - How do I register for the upcoming [conference](event)?
+    - Are there any [alumni meetups](event) planned this year?
+    - What is the schedule for campus [placement drives](event)?
+    - Where can I find the official event calendar for MITS?
+    - Are guest lectures happening soon?
+    - How can I participate in the [hackathon](event)?
+    - Tell me about past events held at MITS.
+- intent: ask_timetable
+  examples: |
+    - Where can I find the class schedule for [B.Tech CSE](program) first year?
+    - What is the academic timetable for the current semester?
+    - When are the lectures for [Mechanical Engineering](department) usually scheduled?
+    - What time does the college administration office open?
+    - Is the academic calendar available online?
+    - What is the schedule for [lab sessions](activity_type) for [ECE](department)?
+    - When is the examination schedule for [M.Tech](program) students released?
+    - How can I access the official timetable?
+    - What are the opening and closing times for the [library](facility)?
+    - Timings for the [computer center](facility)?
+    - When are the mid-semester exams scheduled?
+    - Show timetable for [MCA](program) for [Monday](day).
+- intent: faculty_info
+  examples: |
+    - Tell me about the faculty
+    - Who teaches in CSE department?
+    - Give me details of MITS faculty
+    - Show faculty profiles
+    - List the teachers of electronics department
+    - Who are the professors in mechanical?
+    - Faculty information
+- intent: bot_challenge
+  examples: |
+    - Are you a bot?
+    - Are you human?
+    - Who made you?
+    - What is your purpose?
+    - What are you?
+    - Are you an AI?
+    - Can you think for yourself?
+    - What can you help me with?
+    - What kind of information do you have?
+    - Are you live support?
+    - Tell me about yourself.
+- intent: ask_campus
+  examples: |
+    - Tell me about the MITS Gwalior campus.
+    - Where exactly is MITS located in Gwalior?
+    - What facilities are available on campus?
+    - Does MITS have a central [library](facility)? What are its resources?
+    - Are there good [sports facilities](facility) like grounds or courts?
+    - What are the [hostel](facility) accommodations like? (e.g., room sharing, mess)
+    - Is there a [cafeteria](facility) or [canteen](facility) on campus?
+    - How large is the MITS campus area?
+    - What kind of [laboratory](facility) infrastructure is available?
+    - Is there an on-campus [medical center](facility) or first-aid?
+    - How can I get directions to MITS?
+    - Is a campus map available?
+    - Where is the main administrative building located?
+    - Does the campus have Wi-Fi access for students?
+    - wouls you have a campus map
+- intent: ask_placements
+  examples: |
+    - What are the latest placement statistics for MITS Gwalior?
+    - Which companies typically recruit from MITS?
+    - What is the average salary package offered to MITS graduates?
+    - How does the placement cell help students prepare for jobs?
+    - Can you describe the placement process at MITS?
+    - Does MITS offer specific placement training programs?
+    - What are the placement trends for [Computer Science](department) students?
+    - Tell me about the recent highest salary package offered.
+    - What percentage of eligible students get placed each year?
+    - Who heads the Training and Placement Cell?
+    - Do core engineering companies visit for placements?
+    - What job roles are generally offered to graduates?
+    - Does MITS support students seeking off-campus placements?
+    - what are the placement stats
+    - Placements

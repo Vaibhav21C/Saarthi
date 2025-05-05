@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MITS Assistant</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .dot-flashing {
+      display: inline-block;
+      position: relative;
+      width: 1em;
+      height: 1em;
+    }
+    .dot-flashing::before, .dot-flashing::after, .dot-flashing div {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 0.3em;
+      height: 0.3em;
+      background: #1e40af;
+      border-radius: 50%;
+      animation: dotFlashing 1s infinite linear alternate;
+    }
+    .dot-flashing::before {
+      left: 0;
+      animation-delay: 0s;
+    }
+    #chat {
+      background-image: url('/static/images/unnamed.jpg'); /* Update the path as needed */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      position: relative;
+    }
+    .main-bg {
+      background-image: url('/static/images/bg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      width: 100%;
+    }
+    #chat::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(255,255,255,0.7);
+      z-index: 0;
+      pointer-events: none;
+    }
+    #chat > * {
+      position: relative;
+      z-index: 1;
+    }
+    .dot-flashing div {
+      left: 0.5em;
+      animation-delay: 0.2s;
+    }
+    .dot-flashing::after {
+      left: 1em;
+      animation-delay: 0.4s;
+    }
+    @keyframes dotFlashing {
+      0% { opacity: 0.2; }
+      100% { opacity: 1; }
+    }
+  </style>
+</head>
+<body class="bg-white min-h-screen flex flex-col font-sans">
+  <header class="bg-[#2E6F40] text-white px-6 py-4 flex justify-between items-center shadow-md">
+    <div class="flex items-center gap-3 text-xl font-bold">
+      <img src=url('/static/images/saarthbg.jpg') alt="MITS Logo" class="h-14 w-19" />  </div>
+    <nav class="flex gap-4 text-base font-medium">
+      <a href="https://moodle.mitsweb.in/login/index.php" target="_blank" class="hover:text-[#FBB040] transition">Moodle</a>
+      <a href="https://web.mitsgwalior.in/" target="_blank" class="hover:text-[#FBB040] transition">MITS</a>
+    </nav>
+  </header>
+
+  <div class="main-bg">
+    <main class="relative flex-grow flex justify-center px-4 mt-4">
+      <div class="absolute inset-0 bg-[url('https://source.unsplash.com/featured/?college,education')] bg-cover bg-center opacity-10 blur-sm z-0"></div>
+      <div class="relative z-10 bg-white bg-opacity-80 w-full max-w-3xl rounded-3xl shadow-xl flex flex-col h-[85vh] overflow-hidden">
+        <div class="flex justify-end px-4 py-2">
+          <button onclick="clearChat()" class="bg-red-500 text-white text-sm px-3 py-1 rounded-full hover:bg-red-600">Clear Chat</button>
+        </div>
+        <div id="chat" class="flex-1 overflow-y-auto px-6 py-2 space-y-4 flex flex-col">
+          <!-- Messages will appear here -->
+        </div>
+        <div class="flex gap-2 px-6 py-3">
+          <button onclick="sendMessage('Fees Structure')" class="bg-orange-400 text-white px-4 py-2 rounded-full hover:bg-orange-500 shadow">Fees Structure</button>
+          <button onclick="sendMessage('Courses')" class="bg-orange-400 text-white px-4 py-2 rounded-full hover:bg-orange-500 shadow">Courses</button>
+          <button onclick="sendMessage('Placements')" class="bg-orange-400 text-white px-4 py-2 rounded-full hover:bg-orange-500 shadow">Placements</button>
+        </div>
+        <div class="px-6 pb-4">
+          <input id="userInput" type="text" placeholder="Type a message..." class="w-full border rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" onkeydown="if(event.key==='Enter'){sendMessage()}"/>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const chat = document.getElementById('chat');
+
+    function clearChat() {
+      chat.innerHTML = '';
+    }
+
+    function addMessage(text, sender = 'bot') {
+  const msg = document.createElement('div');
+  msg.className = `rounded-xl px-4 py-2 shadow max-w-sm ${
+    sender === 'user' ? 'bg-blue-100 self-end' : 'bg-white self-start'
+  }`;
+
+  if (sender === 'bot') {
+    msg.innerHTML = text; // Render HTML links properly
+  } else {
+    msg.textContent = text; // Keep user messages safe as plain text
+  }
+
+  chat.appendChild(msg);
+  chat.scrollTop = chat.scrollHeight;
+}
+
+    function simulateTyping() {
+      const typing = document.createElement('div');
+      typing.id = 'typing';
+      typing.className = 'flex gap-1 px-2 self-start dot-flashing';
+      typing.innerHTML = `<div></div>`;
+      chat.appendChild(typing);
+      chat.scrollTop = chat.scrollHeight;
+    }
+
+    function removeTyping() {
+      const typing = document.getElementById('typing');
+      if (typing) typing.remove();
+    }
+
+    function sendMessage(msg = null) {
+      const input = document.getElementById('userInput');
+      const text = msg || input.value.trim();
+      if (!text) return;
+
+      addMessage(text, 'user');
+      input.value = '';
+
+      simulateTyping();
+
+      fetch('http://localhost:5005/webhooks/rest/webhook', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ sender: 'user', message: text })
+      })
+      .then(response => response.json())
+      .then(data => {
+        removeTyping();
+        data.forEach(botMsg => {
+          if (botMsg.text) {
+            addMessage(botMsg.text, 'bot');
+          }
+        });
+      })
+      .catch(() => {
+        removeTyping();
+        addMessage("Sorry, I couldn't reach the assistant.", 'bot');
+      });
+    }
+  </script>
+</body>
+</html>

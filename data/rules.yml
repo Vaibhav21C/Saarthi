@@ -1,0 +1,58 @@
+version: "3.1"
+
+rules:
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say hello anytime the user says hello
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Answer bot challenge
+  steps:
+  - intent: bot_challenge
+  - action: utter_bot_challenge
+
+- rule: Respond to Affirmation (optional, but can be useful)
+  steps:
+  - intent: affirm
+  - action: utter_affirm
+
+- rule: Respond to Denial (optional)
+  steps:
+  - intent: deny
+  - action: utter_deny
+
+- rule: out_of_scope
+  steps:
+    - intent: out_of_scope
+    - action: utter_out_of_scope
+
+- rule: Ask Admission directly
+  steps:
+  - intent: ask_admission
+  - action: utter_ask_admission
+
+- rule: Ask Courses directly
+  steps:
+  - intent: ask_courses
+  - action: utter_ask_courses
+- rule: Provide faculty info
+  steps:
+  - intent: faculty_info
+  - action: utter_faculty_info
+
+- rule: Ask Fees directly
+  steps:
+  - intent: ask_fees
+  - action: utter_ask_fees
+
+- rule: Ask Placements directly
+  steps:
+  - intent: ask_placements
+  - action: utter_ask_placements
+
+# ... add rules for other ask_ intents if desired ...

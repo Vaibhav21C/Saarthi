@@ -1,0 +1,76 @@
+{
+  "type": "MaxHistoryTrackerFeaturizer",
+  "state_featurizer": {
+    "action_texts": [],
+    "entity_tag_specs": [],
+    "feature_states": {
+      "intent": {
+        "affirm": 0,
+        "ask_admission": 1,
+        "ask_campus": 2,
+        "ask_courses": 3,
+        "ask_events": 4,
+        "ask_faculty": 5,
+        "ask_fees": 6,
+        "ask_placements": 7,
+        "ask_timetable": 8,
+        "back": 9,
+        "bot_challenge": 10,
+        "deny": 11,
+        "goodbye": 12,
+        "greet": 13,
+        "nlu_fallback": 14,
+        "out_of_scope": 15,
+        "restart": 16,
+        "session_start": 17
+      },
+      "action_name": {
+        "action_listen": 0,
+        "action_restart": 1,
+        "action_session_start": 2,
+        "action_default_fallback": 3,
+        "action_deactivate_loop": 4,
+        "action_revert_fallback_events": 5,
+        "action_default_ask_affirmation": 6,
+        "action_default_ask_rephrase": 7,
+        "action_two_stage_fallback": 8,
+        "action_unlikely_intent": 9,
+        "action_back": 10,
+        "...": 11,
+        "action_extract_slots": 12,
+        "utter_affirm": 13,
+        "utter_ask_admission": 14,
+        "utter_ask_campus": 15,
+        "utter_ask_courses": 16,
+        "utter_ask_events": 17,
+        "utter_ask_faculty": 18,
+        "utter_ask_fees": 19,
+        "utter_ask_placements": 20,
+        "utter_ask_timetable": 21,
+        "utter_bot_challenge": 22,
+        "utter_deny": 23,
+        "utter_goodbye": 24,
+        "utter_greet": 25
+      },
+      "entities": {
+        "activity": 0,
+        "department": 1,
+        "event": 2,
+        "facility": 3,
+        "financial_aid": 4,
+        "program": 5
+      },
+      "slots": {
+        "program_0": 0,
+        "department_0": 1,
+        "facility_0": 2,
+        "financial_aid_0": 3,
+        "event_0": 4,
+        "activity_0": 5
+      },
+      "active_loop": {}
+    }
+  },
+  "remove_duplicates": true,
+  "max_history": 5
+}

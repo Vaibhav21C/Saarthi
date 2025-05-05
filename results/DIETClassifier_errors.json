@@ -1,0 +1,30 @@
+[
+  {
+    "text": "What are the examination fees at MITS?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "facility",
+        "start": 25,
+        "end": 29,
+        "confidence_entity": 0.5900794267654419,
+        "value": "fees",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "What are the facilities available on the MITS campus?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "facility",
+        "start": 13,
+        "end": 23,
+        "confidence_entity": 0.7220585346221924,
+        "value": "facilities",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  }
+]

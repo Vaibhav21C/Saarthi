@@ -1,0 +1,120 @@
+version: '3.1'
+intents:
+- affirm
+- ask_admission
+- ask_campus
+- ask_courses
+- ask_events
+- ask_faculty
+- ask_fees
+- ask_placements
+- ask_timetable
+- bot_challenge
+- deny
+- faculty_info
+- goodbye
+- greet
+- out_of_scope
+entities:
+- program
+- department
+- facility
+- financial_aid
+- event
+- activity_type
+- day
+slots:
+  program:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: program
+  department:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: department
+  facility:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: facility
+  financial_aid:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: financial_aid
+  event:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: event
+  activity_type:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: activity_type
+  day:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: day
+responses:
+  utter_greet:
+  - text: Hello! How can I help you today regarding MITS Gwalior?
+  - text: Hi there! Ask me anything about MITS Gwalior.
+  - text: Greetings! What information are you looking for about MITS?
+  utter_goodbye:
+  - text: Goodbye! Have a great day.
+  - text: See you later! Feel free to ask if you have more questions.
+  - text: Bye! Take care.
+  utter_affirm:
+  - text: Okay!
+  - text: Got it.
+  utter_deny:
+  - text: I cant help you with this Thank you
+  - text: Sorry!
+  utter_ask_admission:
+  - text: 'You can find all admission details, including eligibility, process, deadlines, required documents, and application forms on the official : <a href= "https://web.mitsgwalior.in/admission/ug-admissions" target="_blank" class="text-blue-600 underline>MITS ADMISSION PAGE</a>. Check the specific program section for detailed criteria.'
+  utter_ask_courses:
+  - text: 'MITS Gwalior offers a variety of programs including B.Tech, M.Tech, MBA, MCA, B.Arch, and PhD across several departments. You can explore the full list, specializations, and curriculum details on the MITS Academics/Programs page: <a href= "https://web.mitsgwalior.in/academics/courses/under-graduate" target="_blank" class="text-blue-600 underline">COURSES OFFFERED</a>.'
+  utter_ask_fees:
+  - text: 'The fee structure varies by program (B.Tech, M.Tech, MBA, etc.) and includes tuition, hostel, transport, and other charges. Scholarships and financial aid options might be available. Please refer to the official MITS Fee Structure page for detailed information: <a href= "https://web.mitsgwalior.in/admission/fee-structure"  target="_blank" class="text-blue-600 underline">MITS FEES STRUCTURE</a>.'
+  utter_ask_faculty:
+  - text: 'MITS has experienced faculty across various departments. You can find the faculty directory, including their profiles, qualifications, research areas, and contact details on the respective department pages on the MITS website: [Link to MITS Faculty/Departments Page].'
+  utter_ask_events:
+  - text: 'MITS hosts various technical fests, cultural events, workshops, seminars, conferences, and placement drives throughout the year. For the latest schedule and details, please check the MITS Events Calendar or News section: <a href= "https://web.mitsgwalior.in/all-events" target="_blank" class="text-blue-600 underline" >MITS EVENTS </a>.'
+  utter_ask_timetable:
+  - text: Academic timetables, including class schedules, lab sessions, and examination schedules, are usually published on the MITS website or student portal before the start of the semester. Please check the Academics or Student Zone section:<a href="https://web.mitsgwalior.in/academics/academic-calendar" target="_blank" class="text-blue-600 underline">MITS ACADEMIC CALENDAR</a>.
+  utter_bot_challenge:
+  - text: I am a virtual assistant designed to provide information about MITS Gwalior.
+  utter_ask_campus:
+  - text: 'MITS Gwalior has a well-equipped campus with academic buildings, labs, workshops, a central library, hostels, sports facilities, a canteen, and medical facilities. You can find more details, location, and a virtual tour on the MITS Campus Information page: <a href="https://web.mitsgwalior.in/gallery/photo-gallery?catid=50" target="_blank" class="text-blue-600 underline">MITS Campus Images</a>.'
+  utter_ask_placements:
+  - text: MITS has a dedicated Training and Placement Cell that facilitates campus recruitment drives. Information about past placement statistics, visiting companies, average/highest packages, and the placement process can be found on the <a href="https://web.mitsgwalior.in/images/mainmenu/MITS%20Deemed%20University%20Gwl%20Brochure%202024.pdf" target="_blank" class="text-blue-600 underline">MITS Placement Stats</a> .
+  utter_please_rephrase:
+  - text: I'm sorry, I didn't quite understand that. Could you please rephrase your question?
+  - text: I'm still learning. Could you ask that in a different way?
+  utter_faculty_info:
+  - text: Here is some info about our faculty:<a href="https://web.mitsgwalior.in/faculty-profiles-cai" target="_blank" class="text-blue-600 underline">MITS Faculty Info</a>
+  - text: 'Sorry, I cant help with that specific request right now. You might find information on the official MITS Gwalior website: <a href="https://web.mitsgwalior.in/faculty-profiles-cai" target="_blank" class="text-blue-600 underline">MITS Faculty Info</a> .'
+  utter_out_of_scope:
+  - text: I'm sorry, I'm not able to help with that. I can provide information about MITS Gwalior.
+  - text: I'm designed to answer questions about the college. Could you please rephrase?
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+actions:
+- utter_ask_admission
+- utter_deny
+- utter_ask_fees
+- utter_greet
+- utter_ask_placements
+- utter_faculty_info

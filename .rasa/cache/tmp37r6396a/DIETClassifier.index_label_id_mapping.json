@@ -1,0 +1,13 @@
+{
+  "0": "affirm",
+  "1": "ask_admission",
+  "2": "ask_courses",
+  "3": "ask_events",
+  "4": "ask_faculty",
+  "5": "ask_fees",
+  "6": "ask_timetable",
+  "7": "bot_challenge",
+  "8": "deny",
+  "9": "goodbye",
+  "10": "greet"
+}

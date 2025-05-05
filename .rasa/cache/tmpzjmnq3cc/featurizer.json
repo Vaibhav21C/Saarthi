@@ -1,0 +1,56 @@
+{
+  "type": "MaxHistoryTrackerFeaturizer",
+  "state_featurizer": {
+    "action_texts": [],
+    "entity_tag_specs": [],
+    "feature_states": {
+      "intent": {
+        "affirm": 0,
+        "ask_admission": 1,
+        "ask_courses": 2,
+        "ask_events": 3,
+        "ask_faculty": 4,
+        "ask_fees": 5,
+        "ask_timetable": 6,
+        "back": 7,
+        "bot_challenge": 8,
+        "deny": 9,
+        "goodbye": 10,
+        "greet": 11,
+        "nlu_fallback": 12,
+        "out_of_scope": 13,
+        "restart": 14,
+        "session_start": 15
+      },
+      "action_name": {
+        "action_listen": 0,
+        "action_restart": 1,
+        "action_session_start": 2,
+        "action_default_fallback": 3,
+        "action_deactivate_loop": 4,
+        "action_revert_fallback_events": 5,
+        "action_default_ask_affirmation": 6,
+        "action_default_ask_rephrase": 7,
+        "action_two_stage_fallback": 8,
+        "action_unlikely_intent": 9,
+        "action_back": 10,
+        "...": 11,
+        "action_extract_slots": 12,
+        "utter_ask_admission": 13,
+        "utter_ask_courses": 14,
+        "utter_ask_events": 15,
+        "utter_ask_faculty": 16,
+        "utter_ask_fees": 17,
+        "utter_ask_timetable": 18,
+        "utter_bot_challenge": 19,
+        "utter_goodbye": 20,
+        "utter_greet": 21
+      },
+      "entities": {},
+      "slots": {},
+      "active_loop": {}
+    }
+  },
+  "remove_duplicates": true,
+  "max_history": 5
+}

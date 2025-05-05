@@ -1,0 +1,63 @@
+{
+  "facility": {
+    "precision": 0.875,
+    "recall": 1.0,
+    "f1-score": 0.9333333333333333,
+    "support": 14,
+    "confused_with": {}
+  },
+  "event": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 14,
+    "confused_with": {}
+  },
+  "activity": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 3,
+    "confused_with": {}
+  },
+  "financial_aid": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2,
+    "confused_with": {}
+  },
+  "program": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 18,
+    "confused_with": {}
+  },
+  "department": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 28,
+    "confused_with": {}
+  },
+  "micro avg": {
+    "precision": 0.9753086419753086,
+    "recall": 1.0,
+    "f1-score": 0.9875,
+    "support": 79
+  },
+  "macro avg": {
+    "precision": 0.9791666666666666,
+    "recall": 1.0,
+    "f1-score": 0.9888888888888889,
+    "support": 79
+  },
+  "weighted avg": {
+    "precision": 0.9778481012658228,
+    "recall": 1.0,
+    "f1-score": 0.9881856540084387,
+    "support": 79
+  },
+  "accuracy": 0.9973154362416108
+}

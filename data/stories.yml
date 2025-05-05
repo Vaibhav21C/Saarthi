@@ -1,0 +1,145 @@
+version: "3.1"
+
+stories:
+
+- story: Happy path - Greet and Ask Admission
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_admission
+    entities:
+    - program: "B.Tech"
+  - slot_was_set:
+    - program: "B.Tech"
+  - action: utter_ask_admission
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: Ask Courses then Fees
+  steps:
+  - intent: ask_courses
+    entities:
+    - department: "Computer Science and Engineering"
+  - slot_was_set:
+    - department: "Computer Science and Engineering"
+  - action: utter_ask_courses
+  - intent: ask_fees
+    entities:
+      - program: "B.Tech"
+  - slot_was_set:
+    - program: "B.Tech"
+  - action: utter_ask_fees
+
+- story: Ask about Campus Facilities
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_campus
+    entities:
+    - facility: "hostel facilities"
+  - slot_was_set:
+    - facility: "hostel facilities"
+  - action: utter_ask_campus
+  - intent: ask_fees
+    entities:
+    - facility: "hostel fees"
+  - slot_was_set: # Overwrite or set facility slot again
+    - facility: "hostel fees"
+  - action: utter_ask_fees
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: Ask about Events
+  steps:
+  - intent: ask_events
+    entities:
+    - event: "technical events"
+  - slot_was_set:
+    - event: "technical events"
+  - action: utter_ask_events
+
+- story: Ask about Faculty
+  steps:
+  - intent: ask_faculty
+    entities:
+    - department: "Mechanical Engineering"
+  - slot_was_set:
+    - department: "Mechanical Engineering"
+  - action: utter_ask_faculty
+
+- story: Ask about Timetable
+  steps:
+  - intent: ask_timetable
+    entities:
+      - program: "M.Tech"
+  - slot_was_set:
+      - program: "M.Tech"
+  - action: utter_ask_timetable
+
+- story: Ask about Placements for a Department
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_placements
+    entities:
+    - department: "Computer Science"
+  - slot_was_set:
+    - department: "Computer Science"
+  - action: utter_ask_placements
+  - intent: affirm # User just says ok
+  - action: utter_affirm
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: User asks multiple unrelated questions
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_admission
+  - action: utter_ask_admission
+  - intent: ask_campus
+  - action: utter_ask_campus
+  - intent: ask_fees
+    entities:
+      - facility: "hostel fees"
+  - slot_was_set:
+      - facility: "hostel fees"
+  - action: utter_ask_fees
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: faculty info path
+  steps:
+  - intent: faculty_info
+  - action: utter_faculty_info
+
+- story: Query with entity but no greeting
+  steps:
+  - intent: ask_courses
+    entities:
+    - program: "MBA"
+  - slot_was_set:
+    - program: "MBA"
+  - action: utter_ask_courses
+
+# Add more stories to cover different flows, entity combinations, and potential interruptions.
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_placements
+  - action: utter_ask_placements
+
+- story: interactive_story_1
+  steps:
+  - intent: ask_campus
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: ask_fees
+  - action: utter_ask_fees
+  - intent: ask_admission
+  - action: utter_ask_admission
+  - intent: goodbye
+  - action: utter_goodbye
